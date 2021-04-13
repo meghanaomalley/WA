@@ -26,91 +26,41 @@
 					<p>INFO 3402, Spring 2021</p>
 				</section>
 
-				<section>
-					<div id="vis0"></div>
-	
-					<script type="text/javascript">
-					
-						var spec = {
-						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-						  "config": {
-						    "view": {
-						    	"continuousHeight": 600,
-						    	"continuousWidth": 800
-						    	}
-						    },
-						    "width": 400,
-						    "height": 300,
-						    "data": {
-						    	"url": "https://vega.github.io/vega-datasets/data/disasters.json"
-						    },
-						    "encoding": {
-						    	"color": {
-						    		"field": "Origin",
-						    		"type": "nominal"
-						    	},
-						    	"x": {
-						    		"field": "Horsepower",
-						    		"type": "quantitative"
-						    	},
-						    	"y": {
-						    		"field": "Miles_per_Gallon",
-						    		"type": "quantitative"
-						    	}
-						    },
-							"mark": "point"
-						};
-					
-						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
-					
-						vegaEmbed("#vis0", spec, opt);
-					
-					</script>
-				</section>
+				
 
 				<section>
 					<div id="vis0"></div>
 	
 					<script type="text/javascript">
 					
-						var spec = {
-						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-						  "config": {
-						    "view": {
-						    	"continuousHeight": 600,
-						    	"continuousWidth": 800
-						    	}
-						    },
-						    "width": 400,
-						    "height": 300,
-						    "data": {
-						    	"url": "https://vega.github.io/vega-datasets/data/disasters.json"
-						    },
-						    "encoding": {
-						    	"color": {
-						    		"field": "Origin",
-						    		"type": "nominal"
-						    	},
-						    	"x": {
-						    		"field": "Horsepower",
-						    		"type": "quantitative"
-						    	},
-						    	"y": {
-						    		"field": "Miles_per_Gallon",
-						    		"type": "quantitative"
-						    	}
-						    },
-							"mark": "point"
-						};
-					
-						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
-					
-						vegaEmbed("#vis0", spec, opt);
+						var spec = {{
+  						"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ 						 "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+ 						 "data": {
+   						 "url": "data/penguins.json"
+  							},
+ 							 "mark": "point",
+ 							 "encoding": {
+  							  "x": {
+   								   "field": "Flipper Length (mm)",
+   							   "type": "quantitative",
+    					  "scale": {"zero": false}
+    						},
+   								 "y": {
+    							  "field": "Body Mass (g)",
+   						   "type": "quantitative",
+    							  "scale": {"zero": false}
+  										  },
+  							  "color": {"field": "Species", "type": "nominal"},
+  							  "shape": {"field": "Species", "type": "nominal"}
+									  }
+													}
 					
 					</script>
 				</section>
 
 				<section>
+					<h3>Interpretation of visualization</h3>
 					<p>Natural disasters kill on average 60,000 people per year, globally.</p>
 					<p>Historically, droughts and floods were the most fatal disaster events. Deaths from these events are now very low- the most deadly events today tend to be earthquakes.
 					 </p>
